@@ -1,0 +1,44 @@
+<!-- Assuming this is in a component template file -->
+<div
+  class="h-full absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center"
+>
+  <div
+    class="w-full flex gap-1 md:flex-row flex-col justify-center items-center p-5"
+  >
+    <div>
+      <img
+        class="w-full object-cover aspect-video md:aspect-auto md:max-w-[500px] rounded-xl block"
+        src="assets/welcome.jpg"
+        alt="welcome"
+      />
+    </div>
+
+    <div class="md:border-[1px] self-center md:self-stretch rounded-lg">
+      <div
+        class="flex flex-col items-center md:items-start justify-center md:max-w-[500px] p-5 gap-5 md:gap-4 h-full w-full max-w-[500px]"
+      >
+        <h4 class="font-extrabold text-3xl">Productive Mind</h4>
+        <p class="text-gray-700">
+          With only the features you need, Organic Mind is customized for
+          individuals seeking a stress-free way to stay forcused on their goals,
+          projects and tasks.
+        </p>
+
+        <div class="w-full flex flex-col justify-center items-center gap-3">
+          <a class="w-full" routerLink="/auth/register">
+            <button
+              class="bg-yellow-400 w-full font-bold rounded-lg py-2 px-3 hover:bg-yellow-400/90 active:translate-y-[0.5px]"
+            >
+              Get started
+            </button>
+          </a>
+          <a
+            class="font-bold text-xs hover:text-gray-700 hover:underline"
+            href="/auth/login"
+            >Already have an account? Sign in</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

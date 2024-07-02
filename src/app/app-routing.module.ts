@@ -5,7 +5,7 @@ import { AuthGuard } from './protect-route.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/auth/welcome',
     pathMatch: 'full',
   },
   {
