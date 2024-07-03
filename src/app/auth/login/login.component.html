@@ -1,15 +1,47 @@
-<div>
-  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" formControlName="email" />
+<div
+  class="flex flex-col items-center md:items-start justify-center p-5 gap-5 md:gap-4 h-full max-w-[300px] sm:max-w-[600px] w-[500px] sm:w-[500px]"
+>
+  <h4 class="font-extrabold text-3xl">Login</h4>
+
+  <form
+    [formGroup]="signInForm"
+    (ngSubmit)="onSubmit()"
+    action=""
+    class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5"
+  >
+    <div class="w-full max-w-[300px] sm:max-w-[500px] flex flex-col gap-1">
+      <label for="email">Email</label>
+
+      <input
+        formControlName="email"
+        type="email"
+        placeholder="example@email.com"
+        name="email"
+        id="email"
+        class="w-full md:max-w-[500px] border-2 rounded-md outline-gray-200 px-3 py-2 bg-white"
+      />
     </div>
 
-    <div>
-      <label for="password">Password:</label>
-      <input id="password" formControlName="password" type="password" />
+    <div class="flex max-w-[300px] sm:max-w-[500px] flex-col gap-1">
+      <label for="password">Password</label>
+
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="•••••••••"
+        name="password"
+        id="password"
+        class="w-full md:max-w-[500px] border-2 rounded-md outline-gray-200 px-3 py-2 bg-white"
+      />
     </div>
 
-    <button type="submit">Sign In</button>
+    <auth-btn ngClass="mt-3 row-col-1 sm:col-span-2 lg:col-span-1">
+      Login
+    </auth-btn>
+    <a
+      routerLink="/auth/register"
+      class="text-center block hover:underline text-sm text-gray-600 justify-self-center self-center"
+      >Don't have an account? Sign Up</a
+    >
   </form>
 </div>

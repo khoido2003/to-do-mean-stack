@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Login } from '../../../types/auth';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +15,18 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log(this.signInForm.value);
+    this.authService.login(this.signInForm.value as Login).subscribe({
+      next: () => this.router.navigate(['/dashboard']),
+      error: (error) => console.error('Error logging in:', error),
+    });
   }
 }
